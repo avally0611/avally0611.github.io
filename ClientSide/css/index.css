@@ -1,0 +1,112 @@
+h1{
+    color: #415A77;
+    font-size: 50px;
+    text-align: center;
+}
+
+body{
+    background-color: #E0E1DD;
+}
+
+h4{
+    color: #778DA9;
+    font-size: 18px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0 15px;
+    max-width: 100%;
+}
+
+.header{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../images/homepage.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay{
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: #f4f4f4a9;
+    z-index: 1;
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+}
+
+.startButton{
+    background-color: #415A77;
+    color: white;
+    font-size: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: #415A77;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px)
+{
+    h1{
+        font-size: 20px;
+    }
+    h4{
+        font-size: 18px;
+    }
+    .startButton{
+        font-size: 25px;
+        padding: 8px 16px;
+    }
+
+}
+
+.content{
+    display: none;
+    overflow: hidden;
+}
+.collapsible {
+    background-color: #E0E1DD;
+    color: #415A77;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.collapsible:after {
+    content: '\02795'; 
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+  
+.collapsible:active {
+    content: "\2796"; 
+}
+  
+.dosesResults{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}

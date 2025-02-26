@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doses Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+
+</head>
+<body>
+
+    <!-- navigation header -->
+  <nav class="navbar navbar-expand-lg custom-navbar w-100">
+
+    <!-- LOGO? -->
+    <a class="navbar-brand" href="#">ONCOPLAN</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Doses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="treatGuide.html">Treatment Guidelines</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+    <!-- this is where user enters weight and height for calculation-->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="inputContainer">
+                    <form id="calculationForm">
+                        <div class="form-group">
+                            <label for="heightInput">Please enter the patient's height:</label>
+                            <input type="number" class="form-control" id="height" placeholder="150cm">
+                        </div>
+                        <div class="form-group">
+                            <label for="weightInput">Please enter the patient's weight:</label>
+                            <input type="number" class="form-control" id="weight" placeholder="50kg">
+                        </div>
+                        <div class="form-group">
+                            <label for="eGFR">Please enter the patient's eGFR: (if you need carboplatin)</label>
+                            <input type="number" class="form-control" id="eGFR" placeholder="50">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="calculateButton">Calculate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- this is where the results will be displayed -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="resultsContainer">
+                    <h3 id="BSA">Your patient's BSA is:</h3>
+                    <p id="results"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dosesResults">
+
+        <button type="button" class="collapsible">AML</button>
+        <div class="content" id="amlcontent">
+            <p>Cytarabine 100mg/m2 IV as a continuous infusion for 7 days: <span id="cytarabine"></span></p>
+            <p>Daunorubicin 60-mg/m2 IV for D 5-7: <span id="daunorubicin60"></span></p>
+            <p>Daunorubicin 75 mg/m2 IV for D 5-7: <span id="daunorubicin75"></span></p>
+            <p>Daunorubicin 90 mg/m2 IV for D 5-7: <span id="daunorubicin90"></span></p>
+            <p>Idarubicin 12mg/m2 IV D 5-7 may replace Daunorubicin in patients<span id="idarubicin"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">AML HiDAC</button>
+        <div class="content" id="amlhidaccontent">
+            <p>Cytarabine 3g/m2 over 2-3 hours IVI every 12 hours on D 1, 3 and 5 (6 doses over 5 days every 4-6 weeks): <span id="cytarabineHiDAC"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">AML Salvage Therapy FLAG-IDA</button>
+        <div class="content" id="amlsalflagcontent">
+            <p>Fludarabine 30 mg/m2/day IV over 30min on days 1-5: <span id="fludarabine"></span></p>
+            <p>Cytarabine 2 g/m2/day IV over 4h; 4h after fludarabine on days 1-5: <span id="cytarabineFLAG"></span></p>
+            <p>Idarubicin 10 mg/m2/day IV on days 1-3: <span id="idarubicinFLAG"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">AML Salvage Therapy</button>
+        <div class="content" id="amlsalcontent">
+            <p>Cytarabine 2-3g/m2 over 2 to 3 hours 12 hourly x 6 days: <span id="cytarabineSalvage"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Breast Cancer Adjuvant AC</button>
+        <div class="content" id="breastaccontent">
+            <p>Cyclophosphamide 600mg/m2 IV on D1: <span id="cyclophosphamideAC"></span></p>
+            <p>Adriamycin 60mg/m2 on D1: <span id="adriamycinAC"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Breast Cancer Adjuvant FAC</button>
+        <div class="content" id="breastfaccontent">
+            <p>5-FU 500mg/m2 IV on D1: <span id="5fuFAC"></span></p>
+            <p>Adriamycin 50mg/m2 IV on D1: <span id="adriamycinFAC"></span></p>
+            <p>Cyclophosphamide 500mg/m2 IV on D1: <span id="cyclophosphamideFAC"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Breast Cancer Adjuvant CMF</button>
+        <div class="content" id="breastcmfcontent">
+            <p>Cyclophophamide 100mg/m2 po for 14 days: <span id="cyclophosphamideCMF"></span></p>
+            <p>Methotrexate 40mg/m2 on D1 and 8: <span id="methotrexateCMF"></span></p>
+            <p>5-Fluorouracil 500mg/m2 IV on D1 and 8: <span id="5fuCMF"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Breast Cancer Adjuvant Taxanes</button>
+        <div class="content" id="breasttaxcontent">
+            <p>Paclitaxel 175mg/m2 3 weekly x 4 cycles: <span id="paclitaxel175"></span></p>
+            <p>Paclitaxel 200mg/m2 3 weekly x 4 cycles: <span id="paclitaxel200"></span></p>
+            <p>Paclitaxel 220mg/m2 3 weekly x 4 cycles: <span id="paclitaxel220"></span></p>
+            <p>Paclitaxel 250mg/m2 3 weekly x 4 cycles: <span id="paclitaxel250"></span></p>
+            <p>Paclitaxel 80mg/m2 weekly x 12 cycles: <span id="paclitaxel80"></span></p>
+            <p>Docetaxel 100mg/m2 3 weekly x 4 cycles: <span id="docetaxel100"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Breast Cancer Adjuvant TAC</button>
+        <div class="content" id="breasttaccontent">
+            <p>Docetaxel 75mg/m2 w: <span id="docetaxelTAC"></span></p>
+            <p>Adriamycin 60mg/m2 D1: <span id="adriamycinTAC"></span></p>
+            <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideTAC"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Breast Cancer Adjuvant Trastuzumab</button>
+        <div class="content" id="breasttrasccontent">
+            <p>Trastuzumab 8mg/kg D1: <span id="trastuzumab8"></span></p>
+            <p>Then Trastuzumab 6mg/kg every 3 weeks thereafter for a total of 9 doses: <span id="trastuzumab6"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Breast Cancer FAC</button>
+        <div class="content" id="metafaccontent">
+            <p>5-FU 500mg/m2 IV on D1: <span id="5fuFACMetastatic"></span></p>
+            <p>Adriamycin 60mg/m2 D1: <span id="adriamycinFACMetastatic"></span></p>
+            <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideFACMetastatic"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Breast Cancer AC</button>
+        <div class="content" id="metaaccontent">
+            <p>Adriamycin 60mg/m2 D1: <span id="adriamycinACMetastatic"></span></p>
+            <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideACMetastatic"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Breast Cancer B </button>
+        <div class="content" id="metabcontent">
+            <p>Paclitaxel 175-250mg/m2 IV over 3 hours every 21 days<span id="paclitaxelMetastatic"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Breast Cancer C </button>
+        <div class="content" id="metabcontent">
+            <p>Docetaxel 75-100mg/m2 every 21 days<span id="docetaxelMetastatic"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Breast Cancer Salvage Therapy D </button>
+        <div class="content" id="metabcontent">
+            <p>Vinorelbine IV 25-30mg/m2 on D1 and 8 of cycle (Every 21 days): <span id="vinorelbine"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Breast Cancer Salvage Therapy E </button>
+        <div class="content" id="metabcontent">
+            <p>Carboplatin AUC 5-6 D1 <span id="carboplatin"></span></p>
+            <p>Gemcitabine 800mg - 1g/m2 D1 and 8: <span id="gemcitabine"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Triple Negative Breast Cancer Salvage Therapy F</button>
+        <div class="content" id="metabcontent">
+            <p>Cisplatin 40mg/m2 D1 + D8: <span id="cisplatin40"></span></p>
+            <p>Gemcitabine 1g/m2 D1 + D8 <span id="gemcitabine1g"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Triple Negative Breast Cancer Salvage Therapy G</button>
+        <div class="content" id="metabcontent">
+            <p>Cisplatin 75mg/m2 D1 + D8: <span id="cisplatin75"></span></p>
+            <p>Gemcitabine 1g/m2 D1 + D8 <span id="gemcitabinemeta1g"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Breast Cancer Salvage Therapy H </button>
+        <div class="content" id="metabcontent">
+            <p>Gemcitabine 1g/m2 D1 and D8 IV every 3 weeks <span id="gemcitabineSalvage"></span></p>
+        </div>
+
+        <button type="button" class="collapsible">Metastatic Breast Cancer Capecitabine Oral </button>
+        <div class="content" id="metabcontent">
+            <p>Capecitabine 850mg/m2 bd x 14 days (cycle 21 days)<span id="capecitabine850"></span></p>
+        </div>
+        
+        
+        
+        
+
+
+
+    </div>
+
+    
+
+
+
+
+</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/BSAcalc.js"></script>
+
+</html>

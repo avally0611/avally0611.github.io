@@ -1,0 +1,53 @@
+body{
+    background-color: #E0E1DD;
+}
+
+
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+a, a:visited, a:active, a:link{
+    font-weight: normal;
+    display: inline-block;
+    background-color: #1B263B;
+    color: white;
+    font-size: 15px;
+    padding: 5px 9px;
+    border-radius: 5px;
+    border: #1B263B;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #415A77;
+}
+
+.card{
+    background-color: #415A77;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 5px 5px 5px #344960;
+    margin: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.searchBar{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #415A77;
+}
