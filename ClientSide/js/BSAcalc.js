@@ -51,25 +51,28 @@ function calculateMedicines(bsa) {
     document.getElementById('daunorubicin90').textContent = `${(bsa * 90).toFixed(2)} mg`;
     document.getElementById('idarubicin').textContent = `${(bsa * 12).toFixed(2)} mg`;
 
-    // AML HiDAC
+    //HiDAC
     document.getElementById('cytarabineHiDAC').textContent = `${(bsa * 3000).toFixed(2)} mg`;
 
-    // AML salvage therapy FLAG-IDA
+    // salvage therapy FLAG-IDA
     document.getElementById('fludarabine').textContent = `${(bsa * 30).toFixed(2)} mg`;
     document.getElementById('cytarabineFLAG').textContent = `${(bsa * 2000).toFixed(2)} mg`;
     document.getElementById('idarubicinFLAG').textContent = `${(bsa * 10).toFixed(2)} mg`;
 
-    // AML HiDAC Salvage
+    // HiDAC Salvage
     document.getElementById('cytarabineSalvage').textContent = `${(bsa * 3000).toFixed(2)} mg`;
 
-    //ALL 
+    //APL -------
+    
     // Remission Induction Therapy
     document.getElementById('ATRA').textContent = `${(bsa * 45).toFixed(2)} mg`;
     document.getElementById('idarubicinAPL').textContent = `${(bsa * 12).toFixed(2)} mg`;
 
     // Maintenance Chemo Therapy
-    document.getElementById('6mp').textContent = `${(bsa * 100).toFixed(2)} mg`;
+    document.getElementById('6mp100').textContent = `${(bsa * 100).toFixed(2)} mg`;
     document.getElementById('methotrexate').textContent = `${(bsa * 10).toFixed(2)} mg`;
+
+    //ALL --------
 
     //month one
     document.getElementById('cyclophosphamide300').textContent = `${(bsa * 300).toFixed(2)} mg`;
@@ -84,6 +87,14 @@ function calculateMedicines(bsa) {
 
     //cns prophylaxis
     document.getElementById('methotrexate10').textContent = `${(bsa * 10).toFixed(2)} mg/m² intrathecally`;
+
+    //general prophylaxis
+    document.getElementById('methotrexate10').textContent = `${(bsa * 10).toFixed(2)} mg/m² orally weekly`;
+    document.getElementById('6mp75').textContent = `${(bsa * 75).toFixed(2)} mg`;
+    document.getElementById('6mp90').textContent = `${(bsa * 90).toFixed(2)} mg`;
+
+    //CML -------
+
 
     // Breast cancer Adjuvant AC
     document.getElementById('cyclophosphamideAC').textContent = `${(bsa * 600).toFixed(2)} mg`;

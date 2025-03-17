@@ -88,11 +88,11 @@
             
             <button type="button" class="collapsible">Induction Therapy</button>
             <div class="content" id=""amlincontent>
-                <p>Cytarabine 100mg/m2 IV as a continuous infusion for 7 days: <span id="cytarabine"></span></p>
-                <p>Daunorubicin 60 mg/m2 IV for D 5-7: <span id="daunorubicin60"></span></p>
-                <p>Daunorubicin 75 mg/m2 IV for D 5-7: <span id="daunorubicin75"></span></p>
-                <p>Daunorubicin 90 mg/m2 IV for D 5-7: <span id="daunorubicin90"></span></p>
-                <p>Idarubicin 12mg/m2 IV D 5-7 may replace Daunorubicin in patients<span id="idarubicin"></span></p>
+                <p>Cytarabine 100mg/m2 IV as a continuous infusion for 7 days: <span id="cytarabine" class="calculatedDose" ></span></p>
+                <p>Daunorubicin 60 mg/m2 IV for D 5-7: <span id="daunorubicin60" class="calculatedDose"></span></p>
+                <p>Daunorubicin 75 mg/m2 IV for D 5-7: <span id="daunorubicin75" class="calculatedDose"></span></p>
+                <p>Daunorubicin 90 mg/m2 IV for D 5-7: <span id="daunorubicin90" class="calculatedDose"></span></p>
+                <p>Idarubicin 12mg/m2 IV D 5-7 may replace Daunorubicin in patients<span id="idarubicin" class="calculatedDose"></span></p>
             </div>
             
 
@@ -131,7 +131,7 @@
             <button type="button" class="collapsible">Maintenance Chemo Therapy</button>
             <div class="content" id="aplconsolidationcontent">
                 <p>ATRA 45mg/m2 orally daily in 2 divided doses for 15 days every 3 months: <span id="ATRA"></span></p>
-                <p>6 - Mercapto Purine(6MP) 100mg/m2 orally daily: <span id="6mp"></span></p>
+                <p>6 - Mercapto Purine(6MP) 100mg/m2 orally daily: <span id="6mp100"></span></p>
                 <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate"></span></p>
             </div>
 
@@ -163,7 +163,48 @@
                 <p>Hydrocortisone 100 mg intrathecally: <span id="hydrocortisone100"></span></p>
             </div>
 
-            
+            <button type="button" class="collapsible">General Prophylaxis</button>
+            <div class="content" id="gpcontent">
+                <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate10"></span></p>
+                <p>6MP 75: <span id="6mp75"></span></p>
+                <p>6MP 90: <span id="6mp90"></span></p>
+                <p>6MP 100: <span id="6mp100"></span></p>
+            </div>
+
+        </div>
+
+        <!-- Chronic Myeloid leukaemia -->
+        <button type="button" class="collapsible">CML</button>
+        <div class="content" id="cmlcontent">
+            <p>Imatinib 400mg orally daily: <span id="imatinib"></span></p>
+            <p>Dasatinib (Sprycel) 100mg daily for patients who are resistant to Imatinib/Nilotiniv: <span id="dasatinib"></span></p>
+        </div>
+
+        <!-- CLL -->
+        <button type="button" class="collapsible">CLL</button>
+        <div class="content" id="cllcontent">
+
+            <button type="button" class="collapsible">FCR - younger patients</button>
+            <div class="content" id="cllfirstcontent">
+                <p>Chlorambucil 0.8mg/kg orally on D1 and D15: <span id="chlorambucil"></span></p>
+                <p>Fludarabine 25mg/m2 orally on D1-5: <span id="fludarabine"></span></p>
+                <p>Cyclophosphamide 250mg/m2 orally on D1-5: <span id="cyclophosphamide250"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">Second Line Therapy</button>
+            <div class="content" id="cllsecondcontent">
+                <p>Fludarabine 25mg/m2 orally on D1-5: <span id="fludarabine"></span></p>
+                <p>Cyclophosphamide 250mg/m2 orally on D1-5: <span id="cyclophosphamide250"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">Third Line Therapy</button>
+            <div class="content" id="cllthirdcontent">
+                <p>Fludarabine 25mg/m2 orally on D1-5: <span id="fludarabine"></span></p>
+                <p>Cyclophosphamide 250mg/m2 orally on D1-5: <span id="cyclophosphamide250"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab"></span></p>
+                <p>Bendamustine 90mg/m2 IV on D1-2: <span id="bendamustine"></span></p>
+            </div>
         </div>
 
         <button type="button" class="collapsible">Breast Cancer Adjuvant AC</button>

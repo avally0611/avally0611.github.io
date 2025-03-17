@@ -132,4 +132,8 @@ h4{
     color: white;
 }
 
+.calculatedDose{
+    color: red;
+    font-weight: bold;
+}
 
