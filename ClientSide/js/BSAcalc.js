@@ -93,7 +93,7 @@ function calculateMedicines(bsa) {
     document.getElementById('6mp75').textContent = `${(bsa * 75).toFixed(2)} mg`;
     document.getElementById('6mp90').textContent = `${(bsa * 90).toFixed(2)} mg`;
 
-    //CML -------
+    //CLL -------
 
 
     // Breast cancer Adjuvant AC

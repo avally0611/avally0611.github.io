@@ -35,7 +35,10 @@
           <a class="nav-link active" aria-current="page" href="#">Doses</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="treatGuide.html">Treatment Guidelines</a>
+            <a class="nav-link" href="premed.html">Premedication</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="sideeffects.html">Side Effects</a>
         </li>
       </ul>
 
@@ -74,7 +77,7 @@
             <div class="col-md-6 offset-md-3">
                 <div class="resultsContainer">
                     <h3 id="BSA">Your patient's BSA is:</h3>
-                    <p id="results"></p>
+                    <p class="results" id="results"></p>
                 </div>
             </div>
         </div>
@@ -98,18 +101,18 @@
 
             <button type="button" class="collapsible">HiDAC</button>
             <div class="content" id="amlhidaccontent">
-                <p>Cytarabine 3g/m2 over 2-3 hours IVI every 12 hours on D 1, 3 and 5 (6 doses over 5 days every 4-6 weeks): <span id="cytarabineHiDAC"></span></p>
+                <p>Cytarabine 3g/m2 over 2-3 hours IVI every 12 hours on D 1, 3 and 5 (6 doses over 5 days every 4-6 weeks): <span id="cytarabineHiDAC" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Salvage Therapy FLAG-IDA</button>
             <div class="content" id="amlsalflagcontent">
-                <p>Fludarabine 30 mg/m2/day IV over 30min on days 1-5: <span id="fludarabine"></span></p>
-                <p>Cytarabine 2 g/m2/day IV over 4h; 4h after fludarabine on days 1-5: <span id="cytarabineFLAG"></span></p>
-                <p>Idarubicin 10 mg/m2/day IV on days 1-3: <span id="idarubicinFLAG"></span></p>
+                <p>Fludarabine 30 mg/m2/day IV over 30min on days 1-5: <span id="fludarabine" class="calculatedDose"></span></p>
+                <p>Cytarabine 2 g/m2/day IV over 4h; 4h after fludarabine on days 1-5: <span id="cytarabineFLAG" class="calculatedDose" ></span></p>
+                <p>Idarubicin 10 mg/m2/day IV on days 1-3: <span id="idarubicinFLAG" class="calculatedDose"></span></p>
             </div>
             <button type="button" class="collapsible">Salvage Therapy HIDAC</button>
             <div class="content" id="amlsalcontent">
-                <p>Cytarabine 2-3g/m2 over 2 to 3 hours 12 hourly x 6 days: <span id="cytarabineSalvage"></span></p>
+                <p>Cytarabine 2-3g/m2 over 2 to 3 hours 12 hourly x 6 days: <span id="cytarabineSalvage" class="calculatedDose"></span></p>
             </div>
 
         </div>
@@ -121,18 +124,18 @@
 
             <button type="button" class="collapsible">Remission Induction Therapy</button>
             <div class="content" id="remisaplcontent">
-                <p>ATRA 45mg/m2 orally daily in 2 divided doses: <span id="ATRA"></span></p>
-                <p>Daunorubicin 60 mg/m2 intravenously for 4 days: <span id="daunorubicin60"></span></p>
-                <p>Daunorubicin 75 mg/m2 intravenously for 4 days:<span id="daunorubicin75"></span></p>
-                <p>Daunorubicin 90 mg/m2 intravenously for 4 days: <span id="daunorubicin90"></span></p>
-                <p>Idarubicin 12mg/m2 intravenously for 4 days: <span id="idarubicinAPL"></span></p>
+                <p>ATRA 45mg/m2 orally daily in 2 divided doses: <span id="ATRA" class="calculatedDose"></span></p>
+                <p>Daunorubicin 60 mg/m2 intravenously for 4 days: <span id="daunorubicin60" class="calculatedDose"></span></p>
+                <p>Daunorubicin 75 mg/m2 intravenously for 4 days:<span id="daunorubicin75" class="calculatedDose"></span></p>
+                <p>Daunorubicin 90 mg/m2 intravenously for 4 days: <span id="daunorubicin90" class="calculatedDose"></span></p>
+                <p>Idarubicin 12mg/m2 intravenously for 4 days: <span id="idarubicinAPL" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Maintenance Chemo Therapy</button>
             <div class="content" id="aplconsolidationcontent">
-                <p>ATRA 45mg/m2 orally daily in 2 divided doses for 15 days every 3 months: <span id="ATRA"></span></p>
-                <p>6 - Mercapto Purine(6MP) 100mg/m2 orally daily: <span id="6mp100"></span></p>
-                <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate"></span></p>
+                <p>ATRA 45mg/m2 orally daily in 2 divided doses for 15 days every 3 months: <span id="ATRA" class="calculatedDose"></span></p>
+                <p>6 - Mercapto Purine(6MP) 100mg/m2 orally daily: <span id="6mp100" class="calculatedDose"></span></p>
+                <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate" class="calculatedDose"></span></p>
             </div>
 
         </div>
@@ -143,32 +146,32 @@
    
             <button type="button" class="collapsible">Chemo Regimen Month One</button>
             <div class="content" id="monthonecontent">
-                <p>Daunorubicin 60mg/m2 intravenously on D1-3.: <span id="daunorubicin60"></span></p>
-                <p>Cyclophosphamide 300mg/m2 intravenously on D1-5.: <span id="cyclophosphamide300"></span></p>
-                <p>Prednisone 60mg/m2 orally on D1-21.: <span id="prednisone60"></span></p>
-                <p>Vincristine 1.4mg/m2 intravenously on D1-8.: <span id="vincristine1.4"></span></p>
-                <p>L-asparaginase 6000u/m2 IV on D14-21.: <span id="lasparaginase6000"></span></p>
+                <p>Daunorubicin 60mg/m2 intravenously on D1-3.: <span id="daunorubicin60" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 300mg/m2 intravenously on D1-5.: <span id="cyclophosphamide300" class="calculatedDose"></span></p>
+                <p>Prednisone 60mg/m2 orally on D1-21.: <span id="prednisone60" class="calculatedDose"></span></p>
+                <p>Vincristine 1.4mg/m2 intravenously on D1-8.: <span id="vincristine1.4" class="calculatedDose"></span></p>
+                <p>L-asparaginase 6000u/m2 IV on D14-21.: <span id="lasparaginase6000" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Chemo Regimen Month Two</button>
             <div class="content" id="monthtwocontent">
-                <p>Cytarabine 600mg/m2 intravenously over 2 hours on D1-4: <span id="cytarabine600"></span></p>
-                <p>Etoposide 300mg/m2 intravenously over 3 hours D1-4: <span id="etoposide300"></span></p>
-                <p>Cyclophosphamide 300mg/m2 intravenously on D1-5: <span id="cyclophosphamide300"></span></p>
+                <p>Cytarabine 600mg/m2 intravenously over 2 hours on D1-4: <span id="cytarabine600" class="calculatedDose"></span></p>
+                <p>Etoposide 300mg/m2 intravenously over 3 hours D1-4: <span id="etoposide300" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 300mg/m2 intravenously on D1-5: <span id="cyclophosphamide300" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">CNS Prophylaxis</button>
             <div class="content" id="cnscontent">
-                <p>Methotrexate 10mg/m2 intrathecally: <span id="methotrexate10"></span></p>
-                <p>Hydrocortisone 100 mg intrathecally: <span id="hydrocortisone100"></span></p>
+                <p>Methotrexate 10mg/m2 intrathecally: <span id="methotrexate10" class="calculatedDose"></span></p>
+                <p>Hydrocortisone 100 mg intrathecally <span id="hydrocortisone100" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">General Prophylaxis</button>
             <div class="content" id="gpcontent">
-                <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate10"></span></p>
-                <p>6MP 75: <span id="6mp75"></span></p>
-                <p>6MP 90: <span id="6mp90"></span></p>
-                <p>6MP 100: <span id="6mp100"></span></p>
+                <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate10" class="calculatedDose"></span></p>
+                <p>6MP 75: <span id="6mp75" class="calculatedDose"></span></p>
+                <p>6MP 90: <span id="6mp90" class="calculatedDose"></span></p>
+                <p>6MP 100: <span id="6mp100" class="calculatedDose"></span></p>
             </div>
 
         </div>
@@ -176,8 +179,8 @@
         <!-- Chronic Myeloid leukaemia -->
         <button type="button" class="collapsible">CML</button>
         <div class="content" id="cmlcontent">
-            <p>Imatinib 400mg orally daily: <span id="imatinib"></span></p>
-            <p>Dasatinib (Sprycel) 100mg daily for patients who are resistant to Imatinib/Nilotiniv: <span id="dasatinib"></span></p>
+            <p>Imatinib 400mg orally daily</p>
+            <p>Dasatinib (Sprycel) 100mg daily for patients who are resistant to Imatinib/Nilotiniv<span id="dasatinib" class="calculatedDose"></span></p>
         </div>
 
         <!-- CLL -->
@@ -186,125 +189,205 @@
 
             <button type="button" class="collapsible">FCR - younger patients</button>
             <div class="content" id="cllfirstcontent">
-                <p>Chlorambucil 0.8mg/kg orally on D1 and D15: <span id="chlorambucil"></span></p>
-                <p>Fludarabine 25mg/m2 orally on D1-5: <span id="fludarabine"></span></p>
-                <p>Cyclophosphamide 250mg/m2 orally on D1-5: <span id="cyclophosphamide250"></span></p>
+                <p>Fludarabine 20-25mg/m2 IV on D1-3 of a 28-42 day cycle: <span id="fludarabine" class="calculatedDose"></span></p>                
+                <p>Cyclophosphamide 150-250mg/m2 IV on D1-3 of 28-42 day cycle: <span id="cyclophosphamide250" class="calculatedDose"></span></p>
+                <p>Rituximab 375mg/m2 D1: <span id="rituximab" class="calculatedDose"></span></p>
             </div>
 
-            <button type="button" class="collapsible">Second Line Therapy</button>
+            <button type="button" class="collapsible">CCR - over 70 years</button>
             <div class="content" id="cllsecondcontent">
-                <p>Fludarabine 25mg/m2 orally on D1-5: <span id="fludarabine"></span></p>
-                <p>Cyclophosphamide 250mg/m2 orally on D1-5: <span id="cyclophosphamide250"></span></p>
-                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab"></span></p>
+                <p>Chlorambucil 4-6mg/m2 orally on D1-14: <span id="chlorambucil" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 100mg/m2 orally on D1-14: <span id="cyclophosphamide100" class="calculatedDose"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab" class="calculatedDose"></span></p>
             </div>
 
-            <button type="button" class="collapsible">Third Line Therapy</button>
-            <div class="content" id="cllthirdcontent">
-                <p>Fludarabine 25mg/m2 orally on D1-5: <span id="fludarabine"></span></p>
-                <p>Cyclophosphamide 250mg/m2 orally on D1-5: <span id="cyclophosphamide250"></span></p>
-                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab"></span></p>
-                <p>Bendamustine 90mg/m2 IV on D1-2: <span id="bendamustine"></span></p>
+        </div>
+
+        <!-- Hodgkin's Lymphoma -->
+        <button type="button" class="collapsible">Hodgkin's Lymphoma</button>
+        <div class="content" id="hodgkinscontent">
+
+            <button type="button" class="collapsible">ABVD</button>
+            <div class="content" id="abvdcontent">
+                <p>Adriamycin 25mg/m2 IV: <span id="adriamycin25" class="calculatedDose"></span></p>
+                <p>Bleomycin 10mg/m2 IV: <span id="bleomycin10" class="calculatedDose"></span></p>
+                <p>Vinblastine 6mg/m2 IV: <span id="vinblastine6" class="calculatedDose"></span></p>
+                <p>Dacarbazine (DTIC) 375mg/m2 IV: <span id="dacarbazine375" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">BEACOPP</button>
+            <div class="content" id="beacoppcontent">
+                <p>Bleomycin 10 units/m2 IV D8: <span id="bleomycin10" class="calculatedDose"></span></p>
+                <p>Etoposide 120mg/m2 IV D1-3: <span id="etoposide100" class="calculatedDose"></span></p>
+                <p>Adriamycin 25mg/m2 IV D1: <span id="adriamycin25" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 600mg/m2 IV D1: <span id="cyclophosphamide650" class="calculatedDose"></span></p>
+                <p>Vincristine 1.4mg/m2 IV D8: <span id="vincristine1.4" class="calculatedDose"></span></p>
+                <p>Prednisone 50mg daily x 14 days po</p>
             </div>
         </div>
 
-        <button type="button" class="collapsible">Breast Cancer Adjuvant AC</button>
-        <div class="content" id="breastaccontent">
-            <p>Cyclophosphamide 600mg/m2 IV on D1: <span id="cyclophosphamideAC"></span></p>
-            <p>Adriamycin 60mg/m2 on D1: <span id="adriamycinAC"></span></p>
+        <!-- Non-Hodgkin's Lymphoma -->
+        <button type="button" class="collapsible">Non-Hodgkin's Lymphoma</button>
+        <div class="content" id="nhlcontent">
+
+            <button type="button" class="collapsible">CVP - cycled every 21-28 days</button>
+            <div class="content" id="cvpcontent">
+                <p>Cyclophosphamide 750mg/m2 IV on D1: <span id="cyclophosphamide750" class="calculatedDose"></span></p>
+                <p>Vincristine 1.4mg/m2 IV D1 (Max dose - 2.5mg): <span id="vincristine1.4" class="calculatedDose"></span></p>
+                <p>Prednisone 100mg/m2 orally for 5 days: <span id="prednisone100" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">R-CVP</button>
+            <div class="content" id="rcvpcontent">
+                <p>Rituximab 375mg/m2 intravenously: <span id="rituximab375" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">R-CHOP</button>
+            <div class="content" id="rchopcontent">
+                <p>Cyclophosphamide 750mg/m2 IV on D1: <span id="cyclophosphamide750" class="calculatedDose"></span></p>
+                <p>Adriamycin 50mg/m2 IV on D1: <span id="adriamycin50" class="calculatedDose"></span></p>
+                <p>Vincristine 1.4mg/m2 IV on D1 (Max dose - 2.5mg): <span id="vincristine1.4" class="calculatedDose"></span></p>
+                <p>Prednisone 100mg/m2 orally for 5 days: <span id="prednisone100" class="calculatedDose"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1 or D2: <span id="rituximab375" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">R-ESHAP</button>
+            <div class="content" id="reshapcontent">
+                <p>Cisplatin 25mg/m2 IV as continuous infusion over 4 days: <span id="cisplatin25" class="calculatedDose"></span></p>
+                <p>Etoposide 60mg/m2 IV as continuous infusion over 4 days: <span id="etoposide40" class="calculatedDose"></span></p>
+                <p>Methylprednisolone 500mg IV daily for D1-5: <span id="methylprednisolone500" class="calculatedDose"></span></p>
+                <p>Cytarabine 2g/m2 IV over 3 hours on D5: <span id="cytarabine2000" class="calculatedDose"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab375" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">R-B</button>
+            <div class="content" id="rbcontent">
+                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab375" class="calculatedDose"></span></p>
+                <p>Bendamustine 50mg/m2 - 100mg/m2 x 2 days every 21-28 days: <span id="bendamustine90" class="calculatedDose"></span></p>
+            </div>
+
         </div>
 
-        <button type="button" class="collapsible">Breast Cancer Adjuvant FAC</button>
-        <div class="content" id="breastfaccontent">
-            <p>5-FU 500mg/m2 IV on D1: <span id="5fuFAC"></span></p>
-            <p>Adriamycin 50mg/m2 IV on D1: <span id="adriamycinFAC"></span></p>
-            <p>Cyclophosphamide 500mg/m2 IV on D1: <span id="cyclophosphamideFAC"></span></p>
-        </div>
+        <!-- Breast Cancer -->
+        <button type="button" class="collapsible">Breast Cancer</button>
+        <div class="content" id="breastcontent">
 
-        <button type="button" class="collapsible">Breast Cancer Adjuvant CMF</button>
-        <div class="content" id="breastcmfcontent"></div>
-            <p>Cyclophophamide 100mg/m2 po for 14 days: <span id="cyclophosphamideCMF"></span></p>
-            <p>Methotrexate 40mg/m2 on D1 and 8: <span id="methotrexateCMF"></span></p>
-            <p>5-Fluorouracil 500mg/m2 IV on D1 and 8: <span id="5fuCMF"></span></p>
-        </div>
+            <button type="button" class="collapsible">Adjuvant AC</button>
+            <div class="content" id="breastaccontent">
+                <p>Cyclophosphamide 600mg/m2 IV on D1: <span id="cyclophosphamideAC" class="calculatedDose"></span></p>
+                <p>Adriamycin 60mg/m2 on D1: <span id="adriamycinAC" class="calculatedDose"></span></p>
+            </div>
 
-        <button type="button" class="collapsible">Breast Cancer Adjuvant Taxanes</button>
-        <div class="content" id="breasttaxcontent">
-            <p>Paclitaxel 175mg/m2 3 weekly x 4 cycles: <span id="paclitaxel175"></span></p>
-            <p>Paclitaxel 200mg/m2 3 weekly x 4 cycles: <span id="paclitaxel200"></span></p>
-            <p>Paclitaxel 220mg/m2 3 weekly x 4 cycles: <span id="paclitaxel220"></span></p>
-            <p>Paclitaxel 250mg/m2 3 weekly x 4 cycles: <span id="paclitaxel250"></span></p>
-            <p>Paclitaxel 80mg/m2 weekly x 12 cycles: <span id="paclitaxel80"></span></p>
-            <p>Docetaxel 100mg/m2 3 weekly x 4 cycles: <span id="docetaxel100"></span></p>
-        </div>
+            <button type="button" class="collapsible">Adjuvant FAC</button>
+            <div class="content" id="breastfaccontent">
+                <p>5-FU 500mg/m2 IV on D1: <span id="5fuFAC" class="calculatedDose"></span></p>
+                <p>Adriamycin 50mg/m2 IV on D1: <span id="adriamycinFAC" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 500mg/m2 IV on D1: <span id="cyclophosphamideFAC" class="calculatedDose"></span></p>
+            </div>
 
-        <button type="button" class="collapsible">Breast Cancer Adjuvant TAC</button>
-        <div class="content" id="breasttaccontent">
-            <p>Docetaxel 75mg/m2 w: <span id="docetaxelTAC"></span></p>
-            <p>Adriamycin 60mg/m2 D1: <span id="adriamycinTAC"></span></p>
-            <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideTAC"></span></p>
-        </div>
+            <button type="button" class="collapsible">Adjuvant CMF</button>
+            <div class="content" id="breastcmfcontent">
+                <p>Cyclophophamide 100mg/m2 po for 14 days: <span id="cyclophosphamideCMF" class="calculatedDose"></span></p>
+                <p>Methotrexate 40mg/m2 on D1 and 8: <span id="methotrexateCMF" class="calculatedDose"></span></p>
+                <p>5-Fluorouracil 500mg/m2 IV on D1 and 8: <span id="5fuCMF" class="calculatedDose"></span></p>
+            </div>
 
-        <button type="button" class="collapsible">Breast Cancer Adjuvant Trastuzumab</button>
-        <div class="content" id="breasttrasccontent">
-            <p>Trastuzumab 8mg/kg D1: <span id="trastuzumab8"></span></p>
-            <p>Then Trastuzumab 6mg/kg every 3 weeks thereafter for a total of 9 doses: <span id="trastuzumab6"></span></p>
-        </div>
+            <button type="button" class="collapsible">Adjuvant Taxanes</button>
+            <div class="content" id="breasttaxcontent">
+                <p>Paclitaxel 175mg/m2 3 weekly x 4 cycles: <span id="paclitaxel175" class="calculatedDose"></span></p>
+                <p>Paclitaxel 200mg/m2 3 weekly x 4 cycles: <span id="paclitaxel200" class="calculatedDose"></span></p>
+                <p>Paclitaxel 220mg/m2 3 weekly x 4 cycles: <span id="paclitaxel220" class="calculatedDose"></span></p>
+                <p>Paclitaxel 250mg/m2 3 weekly x 4 cycles: <span id="paclitaxel250" class="calculatedDose"></span></p>
+                <p>Paclitaxel 80mg/m2 weekly x 12 cycles: <span id="paclitaxel80" class="calculatedDose"></span></p>
+                <p>Docetaxel 100mg/m2 3 weekly x 4 cycles: <span id="docetaxel100" class="calculatedDose"></span></p>
+            </div>
 
-        <button type="button" class="collapsible">Metastatic Breast Cancer FAC</button>
-        <div class="content" id="metafaccontent">
-            <p>5-FU 500mg/m2 IV on D1: <span id="5fuFACMetastatic"></span></p>
-            <p>Adriamycin 60mg/m2 D1: <span id="adriamycinFACMetastatic"></span></p>
-            <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideFACMetastatic"></span></p>
+            <button type="button" class="collapsible">Adjuvant TAC</button>
+            <div class="content" id="breasttaccontent">
+                <p>Docetaxel 75mg/m2 w: <span id="docetaxelTAC" class="calculatedDose"></span></p>
+                <p>Adriamycin 60mg/m2 D1: <span id="adriamycinTAC" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideTAC" class="calculatedDose"></span></p>
+            </div>
+    
+            <button type="button" class="collapsible">Adjuvant Trastuzumab</button>
+            <div class="content" id="breasttrasccontent">
+                <p>Trastuzumab 8mg/kg D1: <span id="trastuzumab8" class="calculatedDose"></span></p>
+                <p>Then Trastuzumab 6mg/kg every 3 weeks thereafter for a total of 9 doses: <span id="trastuzumab6" class="calculatedDose"></span></p>
+            </div>
+        
         </div>
-
-        <button type="button" class="collapsible">Metastatic Breast Cancer AC</button>
-        <div class="content" id="metaaccontent">
-            <p>Adriamycin 60mg/m2 D1: <span id="adriamycinACMetastatic"></span></p>
-            <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideACMetastatic"></span></p>
-        </div>
-
-        <button type="button" class="collapsible">Metastatic Breast Cancer B</button>
+                
+        <!-- Metastatic Breast Cancer -->
+        <button type="button" class="collapsible">Metastatic Breast Cancer</button>
         <div class="content" id="metabcontent">
-            <p>Paclitaxel 175-250mg/m2 IV over 3 hours every 21 days<span id="paclitaxelMetastatic"></span></p>
+
+            <button type="button" class="collapsible">FAC</button>
+            <div class="content" id="metafaccontent">
+                <p>5-FU 500mg/m2 IV on D1: <span id="5fuFACMetastatic" class="calculatedDose"></span></p>
+                <p>Adriamycin 60mg/m2 D1: <span id="adriamycinFACMetastatic" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideFACMetastatic" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">AC</button>
+            <div class="content" id="metaaccontent">
+                <p>Adriamycin 60mg/m2 D1: <span id="adriamycinACMetastatic" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 600mg/m2 D1: <span id="cyclophosphamideACMetastatic" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">B</button>
+            <div class="content" id="metabcontent">
+                <p>Paclitaxel 175-250mg/m2 IV over 3 hours every 21 days<span id="paclitaxelMetastatic" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">C</button>
+            <div class="content" id="metabcontent">
+                <p>Docetaxel 75-100mg/m2 every 21 days<span id="docetaxelMetastatic" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">Salvage Therapy D</button>
+            <div class="content" id="metabcontent">
+                <p>Vinorelbine IV 25-30mg/m2 on D1 and 8 of cycle (Every 21 days): <span id="vinorelbine" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">Salvage Therapy E</button>
+            <div class="content" id="metabcontent">
+                <p>Carboplatin AUC 5-6 D1</p>
+                <p>Gemcitabine 800mg - 1g/m2 D1 and 8: <span id="gemcitabine" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">Triple Negative Salvage Therapy F</button>
+            <div class="content" id="metabcontent">
+                <p>Cisplatin 40mg/m2 D1 + D8: <span id="cisplatin40" class="calculatedDose"></span></p>
+                <p>Gemcitabine 1g/m2 D1 + D8 <span id="gemcitabine1g" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">Triple Negative Salvage Therapy G</button>
+            <div class="content" id="metabcontent">
+                <p>Cisplatin 75mg/m2 D1 + D8: <span id="cisplatin75" class="calculatedDose"></span></p>
+                <p>Gemcitabine 1g/m2 D1 + D8 <span id="gemcitabinemeta1g" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">Salvage Therapy H</button>
+            <div class="content" id="metabcontent">
+                <p>Gemcitabine 1g/m2 D1 and D8 IV every 3 weeks <span id="gemcitabineSalvage" class="calculatedDose"></span></p>
+            </div>
+
+            <button type="button" class="collapsible">Capecitabine Oral</button>
+            <div class="content" id="metabcontent">
+                <p>Capecitabine 850mg/m2 bd x 14 days (cycle 21 days)<span id="capecitabine850" class="calculatedDose"></span></p>
+            </div>
+        
         </div>
 
-        <button type="button" class="collapsible">Metastatic Breast Cancer C</button>
-        <div class="content" id="metabcontent">
-            <p>Docetaxel 75-100mg/m2 every 21 days<span id="docetaxelMetastatic"></span></p>
-        </div>
+        
 
-        <button type="button" class="collapsible">Metastatic Breast Cancer Salvage Therapy D</button>
-        <div class="content" id="metabcontent">
-            <p>Vinorelbine IV 25-30mg/m2 on D1 and 8 of cycle (Every 21 days): <span id="vinorelbine"></span></p>
-        </div>
+        
 
-        <button type="button" class="collapsible">Metastatic Breast Cancer Salvage Therapy E</button>
-        <div class="content" id="metabcontent">
-            <p>Carboplatin AUC 5-6 D1 <span id="carboplatin"></span></p>
-            <p>Gemcitabine 800mg - 1g/m2 D1 and 8: <span id="gemcitabine"></span></p>
-        </div>
+        
 
-        <button type="button" class="collapsible">Metastatic Triple Negative Breast Cancer Salvage Therapy F</button>
-        <div class="content" id="metabcontent">
-            <p>Cisplatin 40mg/m2 D1 + D8: <span id="cisplatin40"></span></p>
-            <p>Gemcitabine 1g/m2 D1 + D8 <span id="gemcitabine1g"></span></p>
-        </div>
+      
 
-        <button type="button" class="collapsible">Metastatic Triple Negative Breast Cancer Salvage Therapy G</button>
-        <div class="content" id="metabcontent">
-            <p>Cisplatin 75mg/m2 D1 + D8: <span id="cisplatin75"></span></p>
-            <p>Gemcitabine 1g/m2 D1 + D8 <span id="gemcitabinemeta1g"></span></p>
-        </div>
-
-        <button type="button" class="collapsible">Metastatic Breast Cancer Salvage Therapy H</button>
-        <div class="content" id="metabcontent">
-            <p>Gemcitabine 1g/m2 D1 and D8 IV every 3 weeks <span id="gemcitabineSalvage"></span></p>
-        </div>
-
-        <button type="button" class="collapsible">Metastatic Breast Cancer Capecitabine Oral</button>
-        <div class="content" id="metabcontent">
-            <p>Capecitabine 850mg/m2 bd x 14 days (cycle 21 days)<span id="capecitabine850"></span></p>
-        </div>
+        
         
         
         
