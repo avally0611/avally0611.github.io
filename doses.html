@@ -61,8 +61,13 @@
                             <input type="number" class="form-control" id="weight" placeholder="50kg">
                         </div>
                         <div class="form-group">
-                            <label for="eGFR">Please enter the patient's eGFR: (if you need carboplatin)</label>
-                            <input type="number" class="form-control" id="eGFR" placeholder="50">
+                            <button type="button" class="collapsible">Carboplatin Calculator</button>
+                            <div class="content" id="carboplatincontent">
+                                <label for="eGFR">Please enter the patient's eGFR: </label>
+                                <input type="number" class="form-control" id="eGFR" placeholder="50">
+                                <label for="AUC">Please enter the patient's AUC: </label>
+                                <input type="number" class="form-control" id="AUC" placeholder="50">
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary" id="calculateButton">Calculate</button>
                     </form>
@@ -125,15 +130,15 @@
             <button type="button" class="collapsible">Remission Induction Therapy</button>
             <div class="content" id="remisaplcontent">
                 <p>ATRA 45mg/m2 orally daily in 2 divided doses: <span id="ATRA" class="calculatedDose"></span></p>
-                <p>Daunorubicin 60 mg/m2 intravenously for 4 days: <span id="daunorubicin60" class="calculatedDose"></span></p>
-                <p>Daunorubicin 75 mg/m2 intravenously for 4 days:<span id="daunorubicin75" class="calculatedDose"></span></p>
-                <p>Daunorubicin 90 mg/m2 intravenously for 4 days: <span id="daunorubicin90" class="calculatedDose"></span></p>
+                <p>Daunorubicin 60 mg/m2 intravenously for 4 days: <span id="daunorubicin60rti" class="calculatedDose"></span></p>
+                <p>Daunorubicin 75 mg/m2 intravenously for 4 days: <span id="daunorubicin75rti" class="calculatedDose"></span></p>
+                <p>Daunorubicin 90 mg/m2 intravenously for 4 days: <span id="daunorubicin90rti" class="calculatedDose"></span></p>
                 <p>Idarubicin 12mg/m2 intravenously for 4 days: <span id="idarubicinAPL" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Maintenance Chemo Therapy</button>
             <div class="content" id="aplconsolidationcontent">
-                <p>ATRA 45mg/m2 orally daily in 2 divided doses for 15 days every 3 months: <span id="ATRA" class="calculatedDose"></span></p>
+                <p>ATRA 45mg/m2 orally daily in 2 divided doses for 15 days every 3 months: <span id="ATRAmct" class="calculatedDose"></span></p>
                 <p>6 - Mercapto Purine(6MP) 100mg/m2 orally daily: <span id="6mp100" class="calculatedDose"></span></p>
                 <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate" class="calculatedDose"></span></p>
             </div>
@@ -146,7 +151,7 @@
    
             <button type="button" class="collapsible">Chemo Regimen Month One</button>
             <div class="content" id="monthonecontent">
-                <p>Daunorubicin 60mg/m2 intravenously on D1-3.: <span id="daunorubicin60" class="calculatedDose"></span></p>
+                <p>Daunorubicin 60mg/m2 intravenously on D1-3.: <span id="daunorubicin60crm1" class="calculatedDose"></span></p>
                 <p>Cyclophosphamide 300mg/m2 intravenously on D1-5.: <span id="cyclophosphamide300" class="calculatedDose"></span></p>
                 <p>Prednisone 60mg/m2 orally on D1-21.: <span id="prednisone60" class="calculatedDose"></span></p>
                 <p>Vincristine 1.4mg/m2 intravenously on D1-8.: <span id="vincristine1.4" class="calculatedDose"></span></p>
@@ -157,21 +162,21 @@
             <div class="content" id="monthtwocontent">
                 <p>Cytarabine 600mg/m2 intravenously over 2 hours on D1-4: <span id="cytarabine600" class="calculatedDose"></span></p>
                 <p>Etoposide 300mg/m2 intravenously over 3 hours D1-4: <span id="etoposide300" class="calculatedDose"></span></p>
-                <p>Cyclophosphamide 300mg/m2 intravenously on D1-5: <span id="cyclophosphamide300" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 300mg/m2 intravenously on D1-5: <span id="cyclophosphamide300m2" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">CNS Prophylaxis</button>
             <div class="content" id="cnscontent">
                 <p>Methotrexate 10mg/m2 intrathecally: <span id="methotrexate10" class="calculatedDose"></span></p>
-                <p>Hydrocortisone 100 mg intrathecally <span id="hydrocortisone100" class="calculatedDose"></span></p>
+                <p>Hydrocortisone 100 mg intrathecally</p>
             </div>
 
             <button type="button" class="collapsible">General Prophylaxis</button>
             <div class="content" id="gpcontent">
-                <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate10" class="calculatedDose"></span></p>
+                <p>Methotrexate 10mg/m2 orally weekly: <span id="methotrexate10gp" class="calculatedDose"></span></p>
                 <p>6MP 75: <span id="6mp75" class="calculatedDose"></span></p>
                 <p>6MP 90: <span id="6mp90" class="calculatedDose"></span></p>
-                <p>6MP 100: <span id="6mp100" class="calculatedDose"></span></p>
+                <p>6MP 100: <span id="6mp100gp" class="calculatedDose"></span></p>
             </div>
 
         </div>
@@ -189,7 +194,7 @@
 
             <button type="button" class="collapsible">FCR - younger patients</button>
             <div class="content" id="cllfirstcontent">
-                <p>Fludarabine 20-25mg/m2 IV on D1-3 of a 28-42 day cycle: <span id="fludarabine" class="calculatedDose"></span></p>                
+                <p>Fludarabine 20-25mg/m2 IV on D1-3 of a 28-42 day cycle: <span id="fludarabinefcr" class="calculatedDose"></span></p>                
                 <p>Cyclophosphamide 150-250mg/m2 IV on D1-3 of 28-42 day cycle: <span id="cyclophosphamide250" class="calculatedDose"></span></p>
                 <p>Rituximab 375mg/m2 D1: <span id="rituximab" class="calculatedDose"></span></p>
             </div>
@@ -198,7 +203,7 @@
             <div class="content" id="cllsecondcontent">
                 <p>Chlorambucil 4-6mg/m2 orally on D1-14: <span id="chlorambucil" class="calculatedDose"></span></p>
                 <p>Cyclophosphamide 100mg/m2 orally on D1-14: <span id="cyclophosphamide100" class="calculatedDose"></span></p>
-                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab" class="calculatedDose"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximabccr" class="calculatedDose"></span></p>
             </div>
 
         </div>
@@ -217,11 +222,11 @@
 
             <button type="button" class="collapsible">BEACOPP</button>
             <div class="content" id="beacoppcontent">
-                <p>Bleomycin 10 units/m2 IV D8: <span id="bleomycin10" class="calculatedDose"></span></p>
+                <p>Bleomycin 10 units/m2 IV D8: <span id="bleomycin10b" class="calculatedDose"></span></p>
                 <p>Etoposide 120mg/m2 IV D1-3: <span id="etoposide100" class="calculatedDose"></span></p>
-                <p>Adriamycin 25mg/m2 IV D1: <span id="adriamycin25" class="calculatedDose"></span></p>
-                <p>Cyclophosphamide 600mg/m2 IV D1: <span id="cyclophosphamide650" class="calculatedDose"></span></p>
-                <p>Vincristine 1.4mg/m2 IV D8: <span id="vincristine1.4" class="calculatedDose"></span></p>
+                <p>Adriamycin 25mg/m2 IV D1: <span id="adriamycin25bp" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 600mg/m2 IV D1: <span id="cyclophosphamide600" class="calculatedDose"></span></p>
+                <p>Vincristine 1.4mg/m2 IV D8: <span id="vincristine1.4bp" class="calculatedDose"></span></p>
                 <p>Prednisone 50mg daily x 14 days po</p>
             </div>
         </div>
@@ -233,7 +238,7 @@
             <button type="button" class="collapsible">CVP - cycled every 21-28 days</button>
             <div class="content" id="cvpcontent">
                 <p>Cyclophosphamide 750mg/m2 IV on D1: <span id="cyclophosphamide750" class="calculatedDose"></span></p>
-                <p>Vincristine 1.4mg/m2 IV D1 (Max dose - 2.5mg): <span id="vincristine1.4" class="calculatedDose"></span></p>
+                <p>Vincristine 1.4mg/m2 IV D1 (Max dose - 2.5mg): <span id="vincristine1.4cvp" class="calculatedDose"></span></p>
                 <p>Prednisone 100mg/m2 orally for 5 days: <span id="prednisone100" class="calculatedDose"></span></p>
             </div>
 
@@ -244,11 +249,11 @@
 
             <button type="button" class="collapsible">R-CHOP</button>
             <div class="content" id="rchopcontent">
-                <p>Cyclophosphamide 750mg/m2 IV on D1: <span id="cyclophosphamide750" class="calculatedDose"></span></p>
+                <p>Cyclophosphamide 750mg/m2 IV on D1: <span id="cyclophosphamide750rchop" class="calculatedDose"></span></p>
                 <p>Adriamycin 50mg/m2 IV on D1: <span id="adriamycin50" class="calculatedDose"></span></p>
-                <p>Vincristine 1.4mg/m2 IV on D1 (Max dose - 2.5mg): <span id="vincristine1.4" class="calculatedDose"></span></p>
-                <p>Prednisone 100mg/m2 orally for 5 days: <span id="prednisone100" class="calculatedDose"></span></p>
-                <p>Rituximab 375mg/m2 IV on D1 or D2: <span id="rituximab375" class="calculatedDose"></span></p>
+                <p>Vincristine 1.4mg/m2 IV on D1 (Max dose - 2.5mg): <span id="vincristine1.4rchop" class="calculatedDose"></span></p>
+                <p>Prednisone 100mg/m2 orally for 5 days: <span id="prednisone100rchop" class="calculatedDose"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1 or D2: <span id="rituximab375rchop" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">R-ESHAP</button>
@@ -257,12 +262,12 @@
                 <p>Etoposide 60mg/m2 IV as continuous infusion over 4 days: <span id="etoposide40" class="calculatedDose"></span></p>
                 <p>Methylprednisolone 500mg IV daily for D1-5: <span id="methylprednisolone500" class="calculatedDose"></span></p>
                 <p>Cytarabine 2g/m2 IV over 3 hours on D5: <span id="cytarabine2000" class="calculatedDose"></span></p>
-                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab375" class="calculatedDose"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab375reshap" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">R-B</button>
             <div class="content" id="rbcontent">
-                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab375" class="calculatedDose"></span></p>
+                <p>Rituximab 375mg/m2 IV on D1: <span id="rituximab375rb" class="calculatedDose"></span></p>
                 <p>Bendamustine 50mg/m2 - 100mg/m2 x 2 days every 21-28 days: <span id="bendamustine90" class="calculatedDose"></span></p>
             </div>
 
@@ -336,12 +341,12 @@
 
             <button type="button" class="collapsible">B</button>
             <div class="content" id="metabcontent">
-                <p>Paclitaxel 175-250mg/m2 IV over 3 hours every 21 days<span id="paclitaxelMetastatic" class="calculatedDose"></span></p>
+                <p>Paclitaxel 175-250mg/m2 IV over 3 hours every 21 days: <span id="paclitaxelMetastatic" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">C</button>
             <div class="content" id="metabcontent">
-                <p>Docetaxel 75-100mg/m2 every 21 days<span id="docetaxelMetastatic" class="calculatedDose"></span></p>
+                <p>Docetaxel 75-100mg/m2 every 21 days: <span id="docetaxelMetastatic" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Salvage Therapy D</button>
@@ -351,30 +356,30 @@
 
             <button type="button" class="collapsible">Salvage Therapy E</button>
             <div class="content" id="metabcontent">
-                <p>Carboplatin AUC 5-6 D1</p>
+                <p>Carboplatin AUC 5-6 D1: <span id="carboplatin" class="calculatedDose"></span></p>
                 <p>Gemcitabine 800mg - 1g/m2 D1 and 8: <span id="gemcitabine" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Triple Negative Salvage Therapy F</button>
             <div class="content" id="metabcontent">
-                <p>Cisplatin 40mg/m2 D1 + D8: <span id="cisplatin40" class="calculatedDose"></span></p>
-                <p>Gemcitabine 1g/m2 D1 + D8 <span id="gemcitabine1g" class="calculatedDose"></span></p>
+                <p>Cisplatin 40mg/m2 D1 + D8: <span id="cisplatin40f" class="calculatedDose"></span></p>
+                <p>Gemcitabine 1g/m2 D1 + D8: <span id="gemcitabine1gf" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Triple Negative Salvage Therapy G</button>
             <div class="content" id="metabcontent">
-                <p>Cisplatin 75mg/m2 D1 + D8: <span id="cisplatin75" class="calculatedDose"></span></p>
-                <p>Gemcitabine 1g/m2 D1 + D8 <span id="gemcitabinemeta1g" class="calculatedDose"></span></p>
+                <p>Cisplatin 75mg/m2 D1 + D8: <span id="cisplatin75g" class="calculatedDose"></span></p>
+                <p>Gemcitabine 1g/m2 D1 + D8: <span id="gemcitabinemeta1gg" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Salvage Therapy H</button>
             <div class="content" id="metabcontent">
-                <p>Gemcitabine 1g/m2 D1 and D8 IV every 3 weeks <span id="gemcitabineSalvage" class="calculatedDose"></span></p>
+                <p>Gemcitabine 1g/m2 D1 and D8 IV every 3 weeks: <span id="gemcitabineSalvageh" class="calculatedDose"></span></p>
             </div>
 
             <button type="button" class="collapsible">Capecitabine Oral</button>
             <div class="content" id="metabcontent">
-                <p>Capecitabine 850mg/m2 bd x 14 days (cycle 21 days)<span id="capecitabine850" class="calculatedDose"></span></p>
+                <p>Capecitabine 850mg/m2 bd x 14 days (cycle 21 days): <span id="capecitabine850o" class="calculatedDose"></span></p>
             </div>
         
         </div>

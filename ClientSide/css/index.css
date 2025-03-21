@@ -140,4 +140,7 @@ h4{
 .results{
     color: red;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    
 }
